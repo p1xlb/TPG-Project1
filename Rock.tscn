@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1h1k1sapesoi"]
+
+[ext_resource type="Texture2D" uid="uid://bs67dyxgm3wk7" path="res://rock.png" id="1_6r1ml"]
+[ext_resource type="Script" uid="uid://cnqjpvlcxf523" path="res://rock.gd" id="1_55vvm"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4s4u5"]
+radius = 3.0
+height = 6.0
+
+[node name="Bullet" type="Area2D"]
+script = ExtResource("1_55vvm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_6r1ml")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_4s4u5")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

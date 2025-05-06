@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcrbo2hjncay4"]
+
+[ext_resource type="Script" uid="uid://dkik2f8ejeu8g" path="res://bullet.gd" id="1_4s4u5"]
+[ext_resource type="Texture2D" uid="uid://y7f8yetanh57" path="res://hand_gun_bullet.png" id="1_ayd6b"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4s4u5"]
+radius = 2.0
+height = 6.0
+
+[node name="Bullet" type="Area2D"]
+rotation = 1.5708
+script = ExtResource("1_4s4u5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ayd6b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_4s4u5")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

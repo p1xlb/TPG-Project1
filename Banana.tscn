@@ -1,0 +1,91 @@
+[gd_scene load_steps=8 format=3 uid="uid://jcwpwswow4ar"]
+
+[ext_resource type="Texture2D" uid="uid://m5wddnccc8t6" path="res://banana_2.png" id="1_ej4t0"]
+[ext_resource type="Script" uid="uid://1r1cegncj2jr" path="res://banana.gd" id="1_wkbku"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wkbku"]
+radius = 6.0
+height = 18.0
+
+[sub_resource type="Animation" id="Animation_vie86"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 4.115)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ej4t0"]
+resource_name = "collect"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qrja7"]
+resource_name = "float"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 4.115), Vector2(0, -4.545)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_awqsw"]
+_data = {
+&"RESET": SubResource("Animation_vie86"),
+&"collect": SubResource("Animation_ej4t0"),
+&"float": SubResource("Animation_qrja7")
+}
+
+[node name="Banana" type="Area2D"]
+script = ExtResource("1_wkbku")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 4.115)
+texture = ExtResource("1_ej4t0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_wkbku")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_awqsw")
+}
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

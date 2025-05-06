@@ -1,0 +1,248 @@
+[gd_scene load_steps=10 format=3 uid="uid://dwhs18nsf5nl5"]
+
+[ext_resource type="Texture2D" uid="uid://cdhsgyvqfub48" path="res://20250506_0125_Pixel Hillscape_simple_compose_01jtgqnygze96aj2p6ewmqpcm3.png" id="1_ynf42"]
+[ext_resource type="Texture2D" uid="uid://b8o5wuw85iibn" path="res://play.png" id="2_kj28g"]
+[ext_resource type="Script" uid="uid://bwud2wg2putld" path="res://play.gd" id="3_hftdl"]
+[ext_resource type="Texture2D" uid="uid://bl4ul8m0ejlyp" path="res://stats.png" id="3_kpj2f"]
+[ext_resource type="Texture2D" uid="uid://s5b8f3bub75o" path="res://quit.png" id="4_hftdl"]
+
+[sub_resource type="Animation" id="Animation_hftdl"]
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.0745098)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Button:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(486, 50)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Button2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(487, 119)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Button3:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(483, 186)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Button:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Button2:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Button3:self_modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_kpj2f"]
+resource_name = "slidein"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.01),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.0745098), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Button:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.54, 1.51),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(486, 50), Vector2(291, 50)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Button2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.06, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(487, 119), Vector2(283, 119)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Button3:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.5, 2.54),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(483, 186), Vector2(292, 186)]
+}
+
+[sub_resource type="Animation" id="Animation_fopwh"]
+resource_name = "transition end"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Button:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Button2:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Button3:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fopwh"]
+_data = {
+&"RESET": SubResource("Animation_hftdl"),
+&"slidein": SubResource("Animation_kpj2f"),
+&"transition end": SubResource("Animation_fopwh")
+}
+
+[node name="Startmenu" type="Node2D"]
+self_modulate = Color(1, 1, 1, 0)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color(1, 1, 1, 0.0745098)
+offset_right = 459.0
+offset_bottom = 278.0
+texture = ExtResource("1_ynf42")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="."]
+offset_left = 291.0
+offset_top = 50.0
+offset_right = 1004.0
+offset_bottom = 375.0
+scale = Vector2(0.185176, 0.175792)
+icon = ExtResource("2_kj28g")
+script = ExtResource("3_hftdl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Button"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_fopwh")
+}
+autoplay = "slidein"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 283.0
+offset_top = 119.0
+offset_right = 1071.0
+offset_bottom = 444.0
+scale = Vector2(0.185176, 0.175792)
+icon = ExtResource("3_kpj2f")
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 292.0
+offset_top = 186.0
+offset_right = 1005.0
+offset_bottom = 511.0
+scale = Vector2(0.185176, 0.175792)
+icon = ExtResource("4_hftdl")
+
+[connection signal="button_up" from="Button" to="Button" method="_on_button_up"]
