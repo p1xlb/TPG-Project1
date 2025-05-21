@@ -3,6 +3,15 @@ extends Node2D
 @onready var player = $Player
 
 func _ready():
+	$Meat.visible = false
+	$Meat/CollisionShape2D.disabled = true
+	$Apple.visible = false
+	$Apple/CollisionShape2D.disabled = true
+	$Carrot.visible = false
+	$Carrot/CollisionShape2D.disabled = true
+	$Potion.visible = false
+	$Potion/CollisionShape2D.disabled = true
+	
 	# Give references to entities that need them
 	for guardsman in get_tree().get_nodes_in_group("enemies"):
 		guardsman.player = player

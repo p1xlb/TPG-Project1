@@ -261,11 +261,16 @@ height = 28.0
 radius = 92.0
 
 [node name="Guardsman" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 2
 script = ExtResource("1_ftub1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_pd4u0")
 animation = &"shoot"
+
+[node name="BulletSpawn" type="Marker2D" parent="."]
+position = Vector2(9, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_fio0h")
@@ -274,6 +279,3 @@ shape = SubResource("CapsuleShape2D_fio0h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
 shape = SubResource("CircleShape2D_pxv5u")
-
-[node name="BulletSpawn" type="Marker2D" parent="."]
-position = Vector2(9, 1)

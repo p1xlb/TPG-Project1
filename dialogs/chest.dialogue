@@ -1,0 +1,28 @@
+~ start
+if State.chest_interact == true:
+	if State.apple && State.meat && State.carrot && State.potion == true:
+		Pilih Urutan:
+		- Apel, Wortel, Ramuan, Daging
+			Peti masih terkunci...
+		- Wortel, Daging, Apel, Ramuan
+			Peti masih terkunci...
+		- Ramuan, Wortel, Apel, Daging
+			Peti masih terkunci...
+		- Daging, Wortel, Ramuan, Apel
+			Peti masih terkunci...
+		- Daging, Ramuan, Wortel, Apel
+			set State.chest_unlocked = true
+			Peti Terbuka!
+		- Ramuan, Apel, Daging, Wortel
+			Peti masih terkunci...
+		- Wortel, Ramuan, Daging, Apel
+			Peti masih terkunci...
+		- Apel, Ramuan, Daging, Wortel
+			Peti masih terkunci...
+	else:
+		Anda belum menemukan semua item
+else:
+	set State.chest_interact = true
+	Untuk membuka peti ini, diperlukan 4 item.
+	Apel, Daging, Wortel, dan Ramuan.
+=> END

@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://ena288iqomt7"]
+[gd_scene load_steps=51 format=3 uid="uid://ena288iqomt7"]
 
 [ext_resource type="Script" uid="uid://bs0ughcds8dlc" path="res://player.gd" id="1_cxr5p"]
 [ext_resource type="Texture2D" uid="uid://ccy28ar7jc3aq" path="res://The Male adventurer - Free/Death/death_normal_right_down.png" id="1_e80uo"]
@@ -317,12 +317,17 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kpjcp"]
 radius = 8.0
-height = 28.0
+height = 24.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tdg3f"]
+radius = 15.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xhfnw"]
 size = Vector2(24, 20)
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 3
+collision_mask = 5
 script = ExtResource("1_cxr5p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -332,8 +337,17 @@ animation = &"run"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_kpjcp")
 
+[node name="ActionableFinder" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ActionableFinder"]
+shape = SubResource("CircleShape2D_tdg3f")
+
 [node name="AttackArea" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+[node name="AttackDetection" type="CollisionShape2D" parent="AttackArea"]
 position = Vector2(4, 0)
 shape = SubResource("RectangleShape2D_xhfnw")
+
+[connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]

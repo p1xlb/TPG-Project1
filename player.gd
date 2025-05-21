@@ -6,22 +6,43 @@ extends CharacterBody2D
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var bananas_collected = 0
+var meat_collected = false
+var carrot_collected = false
+var apple_collected = false
+var potion_collected = false
 var facing_right = true
 
 @onready var animation_player = $AnimatedSprite2D
 @onready var sprite = $AnimatedSprite2D
+@onready var actionable_finder: Area2D = $ActionableFinder
+@onready var attack_area: Area2D = $AttackArea
 
 func _ready():
 	# Make sure the player is in the "player" group
 	add_to_group("player")
-
+	$AttackArea/AttackDetection.disabled = true
+	
+func _unhandled_input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("ui_accept"):
+		var actionables = actionable_finder.get_overlapping_areas()
+		if actionables.size() > 0:
+			actionables[0].action()
+			return
+	
+	if Input.is_action_just_pressed("attack"):
+		$AnimatedSprite2D.play("attack")
+		$AttackArea/AttackDetection.disabled = false
+		await $AnimatedSprite2D.animation_finished
+		$AttackArea/AttackDetection.disabled = true
+		
+	
 func _physics_process(delta):
 	# Apply gravity
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
 	# Handle Jump
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = jump_velocity
 		#$JumpSound.play()
 
@@ -43,11 +64,6 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, speed)
 		if is_on_floor():
 			animation_player.play("idle")
-			
-	if Input.is_action_just_pressed("attack"):
-		$AnimatedSprite2D.play("attack")
-		#check_for_guardsman_hit()
-		await $AnimatedSprite2D.animation_finished
 	
 	if not is_on_floor():
 		animation_player.play("jump")
@@ -95,4 +111,5 @@ func use_banana_on_monkey(monkey):
 
 func _on_attack_area_body_entered(body):
 	if body.is_in_group("enemies") and body.has_method("take_damage"):
+		print("Guardsman takes damage")
 		body.take_damage()

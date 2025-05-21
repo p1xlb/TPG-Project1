@@ -1,0 +1,95 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsodw0am18gk2"]
+
+[sub_resource type="GDScript" id="GDScript_yihbo"]
+script/source = "# DialogUI.gd - Attach this to your dialog UI CanvasLayer
+extends CanvasLayer
+
+func _ready():
+	print(\"DialogUI: _ready() called\")
+	
+	# The CanvasLayer with layer = 1 (default) will stay fixed on screen 
+	# regardless of camera movement
+	
+	# Initially hide the dialog panel
+	if has_node(\"DialogPanel\"):
+		print(\"DialogUI: DialogPanel found, setting to invisible\")
+		$DialogPanel.visible = false
+		
+		# Check for Label node
+		if $DialogPanel.has_node(\"Label\"):
+			print(\"DialogUI: Label node found\")
+		else:
+			print(\"ERROR: DialogUI: Label node not found in DialogPanel\")
+	else:
+		print(\"ERROR: DialogUI: DialogPanel node not found\")
+	
+	# Set up dialog panel position and size for 1152x648px canvas
+	# Note: These are screen coordinates, not world coordinates
+	var canvas_width = 1152
+	var canvas_height = 648
+	var panel_height = 150
+	
+	if has_node(\"DialogPanel\"):
+		print(\"DialogUI: Setting panel size and position\")
+		# Make panel match canvas width and position at bottom
+		# This positioning is already in screen space since it's on a CanvasLayer
+		$DialogPanel.size = Vector2i(canvas_width, panel_height)
+		$DialogPanel.position = Vector2i(0, canvas_height - panel_height)
+		
+		# Set up label margins
+		if $DialogPanel.has_node(\"Label\"):
+			var margin = 20
+			$DialogPanel/Label.size = Vector2i($DialogPanel.size.x - (margin * 2), $DialogPanel.size.y - (margin * 2))
+			$DialogPanel/Label.position = Vector2i(margin, margin)
+			print(\"DialogUI: Label size and position set\")
+			
+		# Apply some styling to make dialog panel more visible
+		apply_dialog_styling()
+	
+	print(\"DialogUI: Setup complete\")
+
+# Apply custom styling to make dialog panel more visible
+func apply_dialog_styling():
+	var panel = $DialogPanel
+	
+	# Create a stylebox for the panel
+	var style_box = StyleBoxFlat.new()
+	style_box.bg_color = Color(0.1, 0.1, 0.2, 0.9)  # Dark blue with high opacity
+	style_box.border_width_bottom = 4
+	style_box.border_width_top = 4
+	style_box.border_width_left = 4
+	style_box.border_width_right = 4
+	style_box.border_color = Color(0.5, 0.5, 0.8)
+	style_box.corner_radius_bottom_left = 8
+	style_box.corner_radius_bottom_right = 8
+	style_box.corner_radius_top_left = 8
+	style_box.corner_radius_top_right = 8
+	
+	# Apply stylebox to panel
+	panel.add_theme_stylebox_override(\"panel\", style_box)
+	
+	# Style the text if Label exists
+	if panel.has_node(\"Label\"):
+		var label = panel.get_node(\"Label\")
+		label.add_theme_color_override(\"font_color\", Color(1, 1, 1))  # White text
+		label.add_theme_font_size_override(\"font_size\", 24)
+"
+
+[node name="DialogUI" type="CanvasLayer"]
+script = SubResource("GDScript_yihbo")
+
+[node name="DialogPanel" type="Panel" parent="."]
+custom_minimum_size = Vector2(0, 150)
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="DialogPanel"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 1132.0
+offset_bottom = 130.0

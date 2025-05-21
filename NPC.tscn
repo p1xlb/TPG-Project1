@@ -1,0 +1,76 @@
+[gd_scene load_steps=12 format=3 uid="uid://chvkj1pkpqdvy"]
+
+[ext_resource type="Script" uid="uid://db3d7q0ld25tf" path="res://NPC.gd" id="1_twre2"]
+[ext_resource type="Texture2D" uid="uid://bykja0gj4lh0e" path="res://The Male adventurer - Free/Idle/idle_right_down.png" id="2_ll5ud"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u1jv5"]
+atlas = ExtResource("2_ll5ud")
+region = Rect2(0, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tciug"]
+atlas = ExtResource("2_ll5ud")
+region = Rect2(48, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bksm8"]
+atlas = ExtResource("2_ll5ud")
+region = Rect2(96, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jc52h"]
+atlas = ExtResource("2_ll5ud")
+region = Rect2(144, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6sao2"]
+atlas = ExtResource("2_ll5ud")
+region = Rect2(192, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5vbj"]
+atlas = ExtResource("2_ll5ud")
+region = Rect2(240, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ru7ao"]
+atlas = ExtResource("2_ll5ud")
+region = Rect2(288, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7isa0"]
+atlas = ExtResource("2_ll5ud")
+region = Rect2(336, 0, 48, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1478n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u1jv5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tciug")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bksm8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jc52h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6sao2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r5vbj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ru7ao")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7isa0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="NPC" type="Area2D"]
+script = ExtResource("1_twre2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_1478n")
+autoplay = "default"
+frame_progress = 0.0517473

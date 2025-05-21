@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var detection_range = 300.0
 @export var shoot_cooldown = 1.5
 @export var bullet_speed = 200.0
+@export var patrol_animation: String = "run"
 
 var player = null
 var can_shoot = true
@@ -17,10 +18,13 @@ var health = 1
 
 func _ready():
 	add_to_group("enemies")
-	animation_player.play("run")
+	animation_player.play(patrol_animation)
+	var players = get_tree().get_nodes_in_group("player")
+	if players.size() > 0:
+		player = players[0]
 
 func _physics_process(delta):
-	if not is_active:
+	if not is_active or player == null:
 		return
 				
 	if player in detection_area.get_overlapping_bodies():
@@ -36,8 +40,7 @@ func _physics_process(delta):
 			animation_player.play("shoot")
 			shoot()
 			await animation_player.animation_finished
-			shoot()
-			animation_player.play("run")
+			animation_player.play(patrol_animation)
 	else:
 		animation_player.play("run")
 
@@ -48,9 +51,6 @@ func shoot():
 	bullet.direction = -1 if sprite.flip_h else 1
 	bullet.speed = bullet_speed
 	get_tree().current_scene.add_child(bullet)
-	#$ShootSound.play()
-	
-	# Start cooldown
 	await get_tree().create_timer(shoot_cooldown).timeout
 	can_shoot = true
 
