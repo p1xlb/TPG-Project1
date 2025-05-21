@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://b88ddnlh3tsb7"]
+
+[ext_resource type="Script" uid="uid://e5fmj4dqflli" path="res://splash_intro.gd" id="1_1ylu2"]
+[ext_resource type="VideoStream" uid="uid://dgwrw6c8vlo83" path="res://opening/video.ogv" id="1_7cv34"]
+
+[node name="SplashIntro" type="Node"]
+script = ExtResource("1_1ylu2")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -56.9999
+offset_top = -2.99999
+offset_right = 33.0001
+offset_bottom = 81.0
+scale = Vector2(14, 8.24324)
+color = Color(0, 0, 0, 1)
+
+[node name="Camera2D" type="Camera2D" parent="ColorRect"]
+position = Vector2(42.2143, 39.9115)
+scale = Vector2(0.0714286, 0.121312)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_left = 352.0
+offset_top = 217.0
+offset_right = 1210.0
+offset_bottom = 697.0
+scale = Vector2(0.45, 0.45)
+stream = ExtResource("1_7cv34")
+autoplay = true

@@ -3,7 +3,6 @@ extends CharacterBody2D
 @export var detection_range = 300.0
 @export var shoot_cooldown = 1.5
 @export var bullet_speed = 200.0
-@export var patrol_animation: String = "run"
 
 var player = null
 var can_shoot = true
@@ -18,7 +17,7 @@ var health = 1
 
 func _ready():
 	add_to_group("enemies")
-	animation_player.play(patrol_animation)
+	animation_player.play("run")
 	var players = get_tree().get_nodes_in_group("player")
 	if players.size() > 0:
 		player = players[0]
@@ -40,7 +39,7 @@ func _physics_process(delta):
 			animation_player.play("shoot")
 			shoot()
 			await animation_player.animation_finished
-			animation_player.play(patrol_animation)
+			animation_player.play("run")
 	else:
 		animation_player.play("run")
 

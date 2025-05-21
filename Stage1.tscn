@@ -433,7 +433,6 @@ position = Vector2(2423, 224)
 [node name="Guardsman2" parent="." instance=ExtResource("16_3mg7b")]
 position = Vector2(526, 268)
 shoot_cooldown = 2.0
-patrol_animation = "patrol2"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Guardsman2"]
 reset_on_save = false
@@ -445,7 +444,6 @@ autoplay = "patrol2"
 [node name="Guardsman3" parent="." instance=ExtResource("16_3mg7b")]
 position = Vector2(1755, 266)
 shoot_cooldown = 2.0
-patrol_animation = "patrol3"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Guardsman3"]
 reset_on_save = false
@@ -619,6 +617,7 @@ autoplay = "float_p"
 
 [connection signal="body_entered" from="Pits" to="Pits" method="_on_body_entered"]
 [connection signal="body_entered" from="Pits2" to="Pits2" method="_on_body_entered"]
+[connection signal="body_entered" from="Chest/Actionables" to="." method="_on_actionables_body_entered"]
 [connection signal="body_entered" from="Meat" to="Meat" method="_on_body_entered"]
 [connection signal="body_entered" from="Carrot" to="Carrot" method="_on_body_entered"]
 [connection signal="body_entered" from="Apple" to="Apple" method="_on_body_entered"]

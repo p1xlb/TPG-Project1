@@ -73,3 +73,14 @@ func _input(event):
 				if player.use_banana_on_monkey(monkey):
 					print("Used banana on monkey!")
 				return
+
+func _on_actionables_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player") or body.name == "Player":
+		$Apple.visible = true
+		$Apple/CollisionShape2D.disabled = false
+		$Meat.visible = true
+		$Meat/CollisionShape2D.disabled = false
+		$Carrot.visible = true
+		$Carrot/CollisionShape2D.disabled = false
+		$Potion.visible = true
+		$Potion/CollisionShape2D.disabled = false
