@@ -76,11 +76,14 @@ func _input(event):
 
 func _on_actionables_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player") or body.name == "Player":
-		$Apple.visible = true
-		$Apple/CollisionShape2D.disabled = false
-		$Meat.visible = true
-		$Meat/CollisionShape2D.disabled = false
-		$Carrot.visible = true
-		$Carrot/CollisionShape2D.disabled = false
-		$Potion.visible = true
-		$Potion/CollisionShape2D.disabled = false
+		if State.chest_interact == false:
+			$Apple.visible = true
+			$Apple/CollisionShape2D.set_deferred("disabled", false)
+			$Meat.visible = true
+			$Meat/CollisionShape2D.set_deferred("disabled", false)
+			$Carrot.visible = true
+			$Carrot/CollisionShape2D.set_deferred("disabled", false)
+			$Potion.visible = true
+			$Potion/CollisionShape2D.set_deferred("disabled", false)
+		else:
+			pass
