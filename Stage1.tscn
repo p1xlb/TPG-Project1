@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://bfikrxek7ilcn"]
+[gd_scene load_steps=49 format=3 uid="uid://bfikrxek7ilcn"]
 
 [ext_resource type="Script" uid="uid://c060pio1q7d67" path="res://stage_1.gd" id="1_1t8ka"]
 [ext_resource type="Texture2D" uid="uid://cd481tahcy3b" path="res://Jungle Monkey Platformer/1-Sprites/Platforms and Decor/Platforms.png" id="1_3kocv"]
@@ -6,17 +6,14 @@
 [ext_resource type="Texture2D" uid="uid://bgflvulhd6eas" path="res://Tiles/Cliff_Tile.png" id="2_d1sxv"]
 [ext_resource type="Texture2D" uid="uid://3o133ga68nsp" path="res://Tiles/Grass_Middle.png" id="3_8ghbs"]
 [ext_resource type="Texture2D" uid="uid://b3a25206tp7o3" path="res://Tiles/Path_Tile.png" id="4_urgrh"]
-[ext_resource type="Texture2D" uid="uid://flabpde8fgvj" path="res://PineForestParallax/MorningLayer6.png" id="5_jfr8b"]
-[ext_resource type="Texture2D" uid="uid://dutfqcn7eqwk2" path="res://PineForestParallax/MorningLayer5.png" id="6_1t8ka"]
 [ext_resource type="Texture2D" uid="uid://bfnyvjm14e44l" path="res://Cute_Fantasy_Free/Outdoor decoration/Oak_Tree.png" id="6_5f46o"]
-[ext_resource type="Texture2D" uid="uid://bl7xl6e80nnjs" path="res://PineForestParallax/MorningLayer4.png" id="7_4b8vk"]
 [ext_resource type="PackedScene" uid="uid://ccqgh2ycurw12" path="res://HUD.tscn" id="7_ur4gu"]
-[ext_resource type="Texture2D" uid="uid://qh5x1jo1s17o" path="res://PineForestParallax/MorningLayer3.png" id="8_5f46o"]
-[ext_resource type="Texture2D" uid="uid://kw6q1kferj1k" path="res://PineForestParallax/MorningLayer2.png" id="9_q0kgd"]
-[ext_resource type="Texture2D" uid="uid://nfnt5cyum8jv" path="res://PineForestParallax/MorningLayer1.png" id="10_3mg7b"]
+[ext_resource type="Texture2D" uid="uid://by8my5hwl5ojt" path="res://city 3/1.png" id="9_o2ind"]
+[ext_resource type="Texture2D" uid="uid://dxboelde85cbb" path="res://city 3/2.png" id="10_4sd3f"]
+[ext_resource type="Texture2D" uid="uid://kelvbqldemm6" path="res://city 3/3.png" id="11_t4vir"]
+[ext_resource type="Texture2D" uid="uid://cnv2bf5qdhq56" path="res://city 3/4.png" id="12_dsied"]
 [ext_resource type="PackedScene" uid="uid://jcwpwswow4ar" path="res://Banana.tscn" id="13_4b8vk"]
-[ext_resource type="PackedScene" uid="uid://dcwsr8iy6vsrr" path="res://Monkey.tscn" id="15_q0kgd"]
-[ext_resource type="PackedScene" uid="uid://dvrgobrfv77" path="res://Guardsman.tscn" id="16_3mg7b"]
+[ext_resource type="Texture2D" uid="uid://ckwr68huq3mfu" path="res://city 3/5.png" id="13_f1ktl"]
 [ext_resource type="Script" uid="uid://m148wfme7eap" path="res://pits.gd" id="18_2eie7"]
 [ext_resource type="PackedScene" uid="uid://chvkj1pkpqdvy" path="res://NPC.tscn" id="19_0ffdr"]
 [ext_resource type="PackedScene" uid="uid://c2ha6mh82t7cn" path="res://helper/actionables.tscn" id="20_0ffdr"]
@@ -115,97 +112,6 @@ sources/1 = SubResource("TileSetAtlasSource_8tj8h")
 sources/2 = SubResource("TileSetAtlasSource_jfr8b")
 sources/3 = SubResource("TileSetAtlasSource_1t8ka")
 sources/4 = SubResource("TileSetAtlasSource_q0kgd")
-
-[sub_resource type="Animation" id="Animation_tty01"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1778, 276)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-1, -1)]
-}
-
-[sub_resource type="Animation" id="Animation_2eie7"]
-length = 6.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3.01),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(526, 268), Vector2(655, 268)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 3, 6),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [Vector2(1, 1), Vector2(-1, 1), Vector2(1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_oahev"]
-resource_name = "patrol3"
-length = 6.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.98, 6),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(1755, 266), Vector2(1920, 266), Vector2(1755, 266)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 2.98),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [Vector2(1, 1), Vector2(-1, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_w2xkh"]
-_data = {
-&"RESET": SubResource("Animation_tty01"),
-&"patrol2": SubResource("Animation_2eie7"),
-&"patrol3": SubResource("Animation_oahev")
-}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ur4gu"]
 size = Vector2(290, 20)
@@ -356,52 +262,48 @@ scale = Vector2(0.19, 0.19)
 transform = Transform2D(0.19, 0, 0, 0.19, 0, 0)
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(1604, 738)
-motion_scale = Vector2(0.1, 0.1)
-motion_mirroring = Vector2(3200, 0)
+position = Vector2(1405.26, 857.895)
+motion_mirroring = Vector2(3049.92, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-texture = ExtResource("5_jfr8b")
+scale = Vector2(5.295, 5.295)
+texture = ExtResource("9_o2ind")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(1604, 738)
-motion_scale = Vector2(0.2, 0.2)
-motion_mirroring = Vector2(3200, 0)
+position = Vector2(1405.26, 857.895)
+motion_scale = Vector2(2, 2)
+motion_mirroring = Vector2(3049.92, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-texture = ExtResource("6_1t8ka")
+scale = Vector2(5.295, 5.295)
+texture = ExtResource("10_4sd3f")
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(1604, 738)
-motion_scale = Vector2(0.3, 0.3)
-motion_mirroring = Vector2(3200, 0)
+position = Vector2(1405.26, 857.895)
+motion_scale = Vector2(3, 3)
+motion_mirroring = Vector2(3049.92, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
-texture = ExtResource("7_4b8vk")
+scale = Vector2(5.295, 5.295)
+texture = ExtResource("11_t4vir")
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(1604, 738)
-motion_scale = Vector2(0.4, 0.4)
-motion_mirroring = Vector2(3200, 0)
+position = Vector2(1405.26, 857.895)
+motion_scale = Vector2(4, 4)
+motion_mirroring = Vector2(3049.92, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
-texture = ExtResource("8_5f46o")
+scale = Vector2(5.295, 5.295)
+texture = ExtResource("12_dsied")
 
 [node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(1604, 738)
-motion_scale = Vector2(0.5, 0.5)
-motion_mirroring = Vector2(3200, 0)
+position = Vector2(1405.26, 857.895)
+motion_scale = Vector2(5, 5)
+motion_mirroring = Vector2(3049.92, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]
-texture = ExtResource("9_q0kgd")
-
-[node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(1604, 738)
-motion_scale = Vector2(0.6, 0.6)
-motion_mirroring = Vector2(3200, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer6"]
-texture = ExtResource("10_3mg7b")
+scale = Vector2(5.295, 5.295)
+texture = ExtResource("13_f1ktl")
 
 [node name="Banana" parent="." instance=ExtResource("13_4b8vk")]
 position = Vector2(246, 278)
@@ -414,43 +316,6 @@ position = Vector2(1114, 278)
 
 [node name="Banana4" parent="." instance=ExtResource("13_4b8vk")]
 position = Vector2(1449, 275)
-
-[node name="Monkey" parent="." instance=ExtResource("15_q0kgd")]
-position = Vector2(358, 232)
-
-[node name="Monkey2" parent="." instance=ExtResource("15_q0kgd")]
-position = Vector2(1277, 226)
-
-[node name="Monkey3" parent="." instance=ExtResource("15_q0kgd")]
-position = Vector2(1383, 228)
-
-[node name="Monkey4" parent="." instance=ExtResource("15_q0kgd")]
-position = Vector2(1988, 222)
-
-[node name="Monkey5" parent="." instance=ExtResource("15_q0kgd")]
-position = Vector2(2423, 224)
-
-[node name="Guardsman2" parent="." instance=ExtResource("16_3mg7b")]
-position = Vector2(526, 268)
-shoot_cooldown = 2.0
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Guardsman2"]
-reset_on_save = false
-libraries = {
-&"": SubResource("AnimationLibrary_w2xkh")
-}
-autoplay = "patrol2"
-
-[node name="Guardsman3" parent="." instance=ExtResource("16_3mg7b")]
-position = Vector2(1755, 266)
-shoot_cooldown = 2.0
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Guardsman3"]
-reset_on_save = false
-libraries = {
-&"": SubResource("AnimationLibrary_w2xkh")
-}
-autoplay = "patrol3"
 
 [node name="Pits" type="Area2D" parent="."]
 position = Vector2(893, 360)
