@@ -1,0 +1,23 @@
+~ start
+if State.papers == 0:
+	if State.fg_interact == false:
+		Penjaga Gerbang: Selamat datang di IKN, anak muda. 
+		Penjaga Gerbang: Jarang ada orang luar datang ke sini sejak pembangunan dipercepat.
+		Anda: Saya penasaran juga tuh kenapa dipercepat.
+		Penjaga Gerbang: Katanya sih untuk sampai target 2045.
+		Penjaga Gerbang: Kalau kamu mau masuk, bantuin bapak dulu dong.
+		Penjaga Gerbang: Beberapa dokumen izin terbang terbawa angin waktu saya ketiduran.
+		Penjaga Gerbang: Tolong kumpulkan 3 dokumen ya.
+		set State.fg_interact = true
+		=> END
+
+if State.papers == 3:
+	Penjaga Gerbang: Wah terima kasih banyak ya, silahkan masuk.
+	Penjaga Gerbang: Mari nak.
+	set State.quest1 = true
+	=> END
+	
+else:
+	Penjaga Gerbang: Tolong kumpulkan dokumen yang terbawa angin.
+	=> END
+=> END

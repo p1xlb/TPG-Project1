@@ -1,0 +1,5 @@
+~ start
+if State.quest1 == false:
+	Gerbang terkunci...
+	
+=> END

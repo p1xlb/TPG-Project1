@@ -5,5 +5,6 @@ func _ready():
 
 func _on_body_entered(body):
 	if body.is_in_group("player") or body.name == "Player":
-		State.carrot = true
+		State.papers = State.papers + 1
+		print(State.papers)
 		queue_free()

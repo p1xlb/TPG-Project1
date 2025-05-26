@@ -9,8 +9,6 @@ func _ready():
 	$Apple/CollisionShape2D.disabled = true
 	$Carrot.visible = false
 	$Carrot/CollisionShape2D.disabled = true
-	$Potion.visible = false
-	$Potion/CollisionShape2D.disabled = true
 	
 	# Give references to entities that need them
 	for guardsman in get_tree().get_nodes_in_group("enemies"):
@@ -76,14 +74,19 @@ func _input(event):
 
 func _on_actionables_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player") or body.name == "Player":
-		if State.chest_interact == false:
-			$Apple.visible = true
-			$Apple/CollisionShape2D.set_deferred("disabled", false)
-			$Meat.visible = true
-			$Meat/CollisionShape2D.set_deferred("disabled", false)
-			$Carrot.visible = true
-			$Carrot/CollisionShape2D.set_deferred("disabled", false)
-			$Potion.visible = true
-			$Potion/CollisionShape2D.set_deferred("disabled", false)
+		print("Body entered")
+		if State.fg_interact == true:
+			if $Apple:
+				$Apple.visible = true
+				$Apple.get_node("CollisionShape2D").set_deferred("disabled", false)
+			if $Meat:
+				$Meat.visible = true
+				$Meat.get_node("CollisionShape2D").set_deferred("disabled", false)
+			if $Carrot:
+				$Carrot.visible = true
+				$Carrot.get_node("CollisionShape2D").set_deferred("disabled", false)
+
 		else:
 			pass
+	else:
+		pass

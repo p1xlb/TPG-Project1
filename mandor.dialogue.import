@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bdt1bv8fvx8mr"
+path="res://.godot/imported/mandor.dialogue-d7b230e79813dccf13e3e9ea965dc865.tres"
+
+[deps]
+
+source_file="res://mandor.dialogue"
+dest_files=["res://.godot/imported/mandor.dialogue-d7b230e79813dccf13e3e9ea965dc865.tres"]
+
+[params]
+
+defaults=true

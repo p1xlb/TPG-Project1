@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://drkdj7p886dq4"
+path="res://.godot/imported/front_guard.dialogue-6a969c1a70359748c65ec3c1086202a5.tres"
+
+[deps]
+
+source_file="res://dialogs/front_guard.dialogue"
+dest_files=["res://.godot/imported/front_guard.dialogue-6a969c1a70359748c65ec3c1086202a5.tres"]
+
+[params]
+
+defaults=true
