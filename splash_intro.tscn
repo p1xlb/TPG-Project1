@@ -1,7 +1,44 @@
-[gd_scene load_steps=3 format=3 uid="uid://b88ddnlh3tsb7"]
+[gd_scene load_steps=6 format=3 uid="uid://b88ddnlh3tsb7"]
 
 [ext_resource type="Script" uid="uid://e5fmj4dqflli" path="res://splash_intro.gd" id="1_1ylu2"]
-[ext_resource type="VideoStream" uid="uid://dgwrw6c8vlo83" path="res://opening/video.ogv" id="1_7cv34"]
+[ext_resource type="VideoStream" uid="uid://b28kuvvb5j3kr" path="res://WhatsApp-Video-2025-05-27-at-13.10.58.ogv" id="2_1ylu2"]
+
+[sub_resource type="Animation" id="Animation_1ylu2"]
+resource_name = "fade"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VideoStreamPlayer:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_g33c1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VideoStreamPlayer:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cymkj"]
+_data = {
+&"RESET": SubResource("Animation_g33c1"),
+&"fade": SubResource("Animation_1ylu2")
+}
 
 [node name="SplashIntro" type="Node"]
 script = ExtResource("1_1ylu2")
@@ -15,14 +52,22 @@ scale = Vector2(14, 8.24324)
 color = Color(0, 0, 0, 1)
 
 [node name="Camera2D" type="Camera2D" parent="ColorRect"]
+self_modulate = Color(1, 1, 1, 0)
 position = Vector2(42.2143, 39.9115)
 scale = Vector2(0.0714286, 0.121312)
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
-offset_left = 352.0
-offset_top = 217.0
-offset_right = 1210.0
-offset_bottom = 697.0
-scale = Vector2(0.45, 0.45)
-stream = ExtResource("1_7cv34")
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 279.0
+offset_top = 164.0
+offset_right = 2199.0
+offset_bottom = 1244.0
+scale = Vector2(0.27, 0.27)
+stream = ExtResource("2_1ylu2")
 autoplay = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_cymkj")
+}
+autoplay = "fade"

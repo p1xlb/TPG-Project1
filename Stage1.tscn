@@ -1084,6 +1084,7 @@ _data = {
 }
 
 [node name="Stage1" type="Node2D"]
+position = Vector2(-17, 1)
 script = ExtResource("1_1t8ka")
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -1412,7 +1413,7 @@ dialog_resource = ExtResource("37_5ty5u")
 shape = SubResource("CircleShape2D_tty01")
 
 [node name="NPC_Q1" type="CharacterBody2D" parent="."]
-position = Vector2(2883.1, 274)
+position = Vector2(3262, 274)
 script = ExtResource("36_fj6uv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="NPC_Q1"]

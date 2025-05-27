@@ -53,7 +53,7 @@ offset_top = 109.0
 offset_right = 333.0
 offset_bottom = 168.0
 text = "				Stage 1
-Hutan Rimba Kalimantan"
+		Welcome to IKN"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
