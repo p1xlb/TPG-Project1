@@ -10,6 +10,11 @@ func _ready():
 	$Carrot.visible = false
 	$Carrot/CollisionShape2D.disabled = true
 	
+	$Player.set_physics_process(false)
+	await $Bus/AnimationPlayer.animation_finished
+	$Bus.queue_free()
+	$Player.set_physics_process(true)
+	
 	# Give references to entities that need them
 	for guardsman in get_tree().get_nodes_in_group("enemies"):
 		guardsman.player = player

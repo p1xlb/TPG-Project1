@@ -1,5 +1,7 @@
 extends Node
 
+var van_gone: bool = false
+
 var chest_interact: bool = false
 var chest_unlocked: bool = false
 var fg_interact: bool = false

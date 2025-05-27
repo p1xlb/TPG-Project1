@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://bfikrxek7ilcn"]
+[gd_scene load_steps=91 format=3 uid="uid://bfikrxek7ilcn"]
 
 [ext_resource type="Script" uid="uid://c060pio1q7d67" path="res://stage_1.gd" id="1_1t8ka"]
 [ext_resource type="Texture2D" uid="uid://cd481tahcy3b" path="res://Jungle Monkey Platformer/1-Sprites/Platforms and Decor/Platforms.png" id="1_3kocv"]
@@ -37,6 +37,8 @@
 [ext_resource type="Texture2D" uid="uid://dfsghd6jf1dk" path="res://All Random NPCs/malay_woman.png" id="36_wvv04"]
 [ext_resource type="Resource" uid="uid://dbv1i7410tgkf" path="res://dialogs/npc4.dialogue" id="37_5ty5u"]
 [ext_resource type="Resource" uid="uid://3etefup7pa1l" path="res://dialogs/npc_q1.dialogue" id="37_7rl1s"]
+[ext_resource type="Texture2D" uid="uid://dn37l7c1b5kw2" path="res://VanBounceRoll-Sheet.png" id="38_5ty5u"]
+[ext_resource type="Script" uid="uid://bu17nhkxc0rg1" path="res://bus.gd" id="38_7rl1s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1l0jo"]
 texture = ExtResource("1_3kocv")
@@ -969,6 +971,114 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nalsi"]
 size = Vector2(20, 61)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_pgs8i"]
+atlas = ExtResource("38_5ty5u")
+region = Rect2(0, 0, 96, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nalsi"]
+atlas = ExtResource("38_5ty5u")
+region = Rect2(96, 0, 96, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_flhfy"]
+atlas = ExtResource("38_5ty5u")
+region = Rect2(192, 0, 96, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwask"]
+atlas = ExtResource("38_5ty5u")
+region = Rect2(0, 48, 96, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cnj1u"]
+atlas = ExtResource("38_5ty5u")
+region = Rect2(96, 48, 96, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1gbw"]
+atlas = ExtResource("38_5ty5u")
+region = Rect2(192, 48, 96, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qsbba"]
+atlas = ExtResource("38_5ty5u")
+region = Rect2(0, 96, 96, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ysajr"]
+atlas = ExtResource("38_5ty5u")
+region = Rect2(96, 96, 96, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a7pbb"]
+atlas = ExtResource("38_5ty5u")
+region = Rect2(192, 96, 96, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t8jbu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pgs8i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nalsi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flhfy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwask")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cnj1u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e1gbw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qsbba")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ysajr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a7pbb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="Animation" id="Animation_8frv6"]
+resource_name = "van_drive"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.566667, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(50, 264), Vector2(-200, 264)]
+}
+
+[sub_resource type="Animation" id="Animation_ruu8t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(50, 264)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a27a8"]
+_data = {
+&"RESET": SubResource("Animation_ruu8t"),
+&"van_drive": SubResource("Animation_8frv6")
+}
+
 [node name="Stage1" type="Node2D"]
 script = ExtResource("1_1t8ka")
 
@@ -1321,6 +1431,22 @@ dialog_resource = ExtResource("37_7rl1s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC_Q1/Actionables"]
 shape = SubResource("CircleShape2D_tty01")
+
+[node name="Bus" type="Area2D" parent="."]
+position = Vector2(50, 264)
+scale = Vector2(-1, 1)
+script = ExtResource("38_7rl1s")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bus"]
+sprite_frames = SubResource("SpriteFrames_t8jbu")
+autoplay = "default"
+frame_progress = 0.0276657
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Bus"]
+libraries = {
+&"": SubResource("AnimationLibrary_a27a8")
+}
+autoplay = "van_drive"
 
 [connection signal="body_entered" from="Pits" to="Pits" method="_on_body_entered"]
 [connection signal="body_entered" from="Pits2" to="Pits2" method="_on_body_entered"]
