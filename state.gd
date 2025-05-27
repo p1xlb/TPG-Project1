@@ -13,4 +13,6 @@ var quest1: bool = false
 #var carrot: bool = false
 #var potion: bool = false
 
+var quiz1: bool = false
+
 var sequence: Array = []

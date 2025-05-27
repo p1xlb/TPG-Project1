@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=3 uid="uid://bfikrxek7ilcn"]
+[gd_scene load_steps=93 format=3 uid="uid://bfikrxek7ilcn"]
 
 [ext_resource type="Script" uid="uid://c060pio1q7d67" path="res://stage_1.gd" id="1_1t8ka"]
 [ext_resource type="Texture2D" uid="uid://cd481tahcy3b" path="res://Jungle Monkey Platformer/1-Sprites/Platforms and Decor/Platforms.png" id="1_3kocv"]
@@ -30,10 +30,11 @@
 [ext_resource type="Resource" uid="uid://dxhrkumahppxv" path="res://dialogs/gate.dialogue" id="30_4sd3f"]
 [ext_resource type="Texture2D" uid="uid://bt26v2fnr7np0" path="res://All Random NPCs/village_head.png" id="31_dsied"]
 [ext_resource type="Script" uid="uid://db3d7q0ld25tf" path="res://NPC.gd" id="31_f1ktl"]
+[ext_resource type="Resource" uid="uid://6p8q5uqrqh37" path="res://dialogs/npc5.dialogue" id="32_7rl1s"]
 [ext_resource type="Texture2D" uid="uid://351nrbmyf4wn" path="res://All Random NPCs/atok.png" id="33_fshpd"]
-[ext_resource type="Resource" uid="uid://6p8q5uqrqh37" path="res://npc5.dialogue" id="34_wvv04"]
 [ext_resource type="Resource" uid="uid://bdt1bv8fvx8mr" path="res://mandor.dialogue" id="35_8y57m"]
 [ext_resource type="Texture2D" uid="uid://bkf78mdw383wi" path="res://All Random NPCs/chinese_woman.png" id="36_5ty5u"]
+[ext_resource type="Script" uid="uid://uvdj5mxq0m70" path="res://npc_q1.gd" id="36_fj6uv"]
 [ext_resource type="Texture2D" uid="uid://dfsghd6jf1dk" path="res://All Random NPCs/malay_woman.png" id="36_wvv04"]
 [ext_resource type="Resource" uid="uid://dbv1i7410tgkf" path="res://dialogs/npc4.dialogue" id="37_5ty5u"]
 [ext_resource type="Resource" uid="uid://3etefup7pa1l" path="res://dialogs/npc_q1.dialogue" id="37_7rl1s"]
@@ -898,6 +899,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_tty01"]
 radius = 15.7175
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_fj6uv"]
+radius = 18.0278
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_7rl1s"]
 atlas = ExtResource("33_fshpd")
 region = Rect2(0, 0, 87, 130)
@@ -1042,6 +1046,21 @@ animations = [{
 "speed": 7.0
 }]
 
+[sub_resource type="Animation" id="Animation_ruu8t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(50, 264)]
+}
+
 [sub_resource type="Animation" id="Animation_8frv6"]
 resource_name = "van_drive"
 length = 4.0
@@ -1056,21 +1075,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(50, 264), Vector2(-200, 264)]
-}
-
-[sub_resource type="Animation" id="Animation_ruu8t"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(50, 264)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_a27a8"]
@@ -1300,7 +1304,7 @@ dialog_resource = ExtResource("19_hm03y")
 shape = SubResource("CircleShape2D_tty01")
 
 [node name="NPC8" type="Area2D" parent="."]
-position = Vector2(2136, 277)
+position = Vector2(1757, 277)
 scale = Vector2(-1, 1)
 script = ExtResource("31_f1ktl")
 
@@ -1311,12 +1315,10 @@ autoplay = "default"
 frame_progress = 0.53703
 
 [node name="Actionables" parent="NPC8" instance=ExtResource("20_0ffdr")]
-rotation = 3.14159
-scale = Vector2(1, -1)
-dialog_resource = ExtResource("34_wvv04")
+dialog_resource = ExtResource("32_7rl1s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC8/Actionables"]
-shape = SubResource("CircleShape2D_tty01")
+shape = SubResource("CircleShape2D_fj6uv")
 
 [node name="NPC4" type="Area2D" parent="."]
 position = Vector2(1405.29, 277)
@@ -1393,7 +1395,7 @@ shape = SubResource("CapsuleShape2D_fshpd")
 
 [node name="NPC Sp 2" type="Area2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(1741.45, 277)
+position = Vector2(2105, 277)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="NPC Sp 2"]
 rotation = -3.14159
@@ -1411,6 +1413,7 @@ shape = SubResource("CircleShape2D_tty01")
 
 [node name="NPC_Q1" type="CharacterBody2D" parent="."]
 position = Vector2(2883.1, 274)
+script = ExtResource("36_fj6uv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="NPC_Q1"]
 rotation = -3.14159
@@ -1440,7 +1443,7 @@ script = ExtResource("38_7rl1s")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bus"]
 sprite_frames = SubResource("SpriteFrames_t8jbu")
 autoplay = "default"
-frame_progress = 0.0276657
+frame_progress = 0.790243
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Bus"]
 libraries = {
@@ -1456,11 +1459,10 @@ autoplay = "van_drive"
 [connection signal="body_entered" from="Apple" to="Apple" method="_on_body_entered"]
 [connection signal="body_entered" from="Gates/Actionables" to="Gates" method="_on_actionables_body_entered"]
 [connection signal="body_entered" from="NPC3/Actionables" to="." method="_on_actionables_body_entered"]
-[connection signal="body_entered" from="NPC8/Actionables" to="." method="_on_actionables_body_entered"]
 [connection signal="body_entered" from="NPC4/Actionables" to="." method="_on_actionables_body_entered"]
 [connection signal="body_entered" from="NPC5/Actionables" to="." method="_on_actionables_body_entered"]
 [connection signal="body_entered" from="NPC6/Actionables" to="." method="_on_actionables_body_entered"]
 [connection signal="body_entered" from="NPC7/Actionables" to="." method="_on_actionables_body_entered"]
 [connection signal="body_entered" from="NPC Sp/Actionables" to="." method="_on_actionables_body_entered"]
 [connection signal="body_entered" from="NPC Sp 2/Actionables" to="." method="_on_actionables_body_entered"]
-[connection signal="body_entered" from="NPC_Q1/Actionables" to="." method="_on_actionables_body_entered"]
+[connection signal="body_entered" from="NPC_Q1/Actionables" to="NPC_Q1" method="_on_actionables_body_entered"]

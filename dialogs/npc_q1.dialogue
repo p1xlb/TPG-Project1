@@ -1,6 +1,15 @@
 ~ start
-Rini: Mau lewat bang? Jawab dulu pertanyaan Rini!
-Rini: Kenapa IKN dibangun?
-- Karena cuaca di Kalimantan selalu cerah
-- 
+if State.quiz1 == true:
+	Rini: Terima kasih sudah main dengan Rini!
+
+if State.quiz1 == false:
+	Rini: Mau lewat bang? Jawab dulu pertanyaan Rini!
+	Rini: Kenapa IKN dibangun?
+	- Karena cuaca di Kalimantan selalu cerah
+		Rini: Yah salah, coba deh ngobrol lagi sama orang orang.
+	- Memindahkan beban dari Jakarta
+		Rini: Betul sekali! Silahkan lewat bang.
+		set State.quiz1 = true
+	- Inginnya warga Jakarta untuk pindah
+		Rini: Yah salah, coba deh ngobrol lagi sama orang orang.
 => END
