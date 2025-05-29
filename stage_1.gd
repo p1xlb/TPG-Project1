@@ -80,7 +80,7 @@ func _input(event):
 func _on_actionables_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player") or body.name == "Player":
 		print("Body entered")
-		if State.fg_interact == true:
+		if State.fg_interact == true and State.quest1 == false:
 			if $Apple:
 				$Apple.visible = true
 				$Apple.get_node("CollisionShape2D").set_deferred("disabled", false)

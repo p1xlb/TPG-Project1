@@ -1,5 +1,7 @@
 extends Node
 
+var player_health: int = 3
+
 var van_gone: bool = false
 
 var chest_interact: bool = false

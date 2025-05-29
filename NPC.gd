@@ -8,7 +8,7 @@ func _ready():
 	# Debug message
 	print("NPC: _ready() called")
 	# Create an interaction indicator (exclamation mark or similar)
-	create_indicator()
+	#create_indicator()
 
 # Add a visual indicator above the NPC to show it's interactive
 func create_indicator():

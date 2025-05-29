@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var speed = 150.0
 @export var jump_velocity = -300.0
-@export var health = 3
+#var health = State.player_health
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var bananas_collected = 0
@@ -18,6 +18,7 @@ var facing_right = true
 @onready var attack_area: Area2D = $AttackArea
 
 func _ready():
+	get_tree().call_group("hud", "update_health", State.player_health)
 	# Make sure the player is in the "player" group
 	add_to_group("player")
 	$AttackArea/AttackDetection.disabled = true
@@ -34,8 +35,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		$AttackArea/AttackDetection.disabled = false
 		await $AnimatedSprite2D.animation_finished
 		$AttackArea/AttackDetection.disabled = true
-		
-	
+
 func _physics_process(delta):
 	# Apply gravity
 	if not is_on_floor():
@@ -78,7 +78,7 @@ func collect_banana():
 	print("Banana collected! Total: ", bananas_collected)  # Debug print
 
 func take_damage():
-	health -= 1
+	State.player_health -= 1
 	#$HurtSound.play()
 	# Flash the player to indicate damage
 	modulate = Color(1, 0.3, 0.3, 0.7)
@@ -86,9 +86,9 @@ func take_damage():
 	modulate = Color(1, 1, 1, 1)
 	
 	# Notify the HUD to update health
-	get_tree().call_group("hud", "update_health", health)
+	get_tree().call_group("hud", "update_health", State.player_health)
 	
-	if health <= 0:
+	if State.player_health <= 0:
 		die()
 
 func die():
@@ -98,7 +98,10 @@ func die():
 	set_physics_process(false)
 	# Reset level after a delay
 	await get_tree().create_timer(2.0).timeout
-	get_tree().reload_current_scene()
+	if State.player_health == 0:
+		get_tree().change_scene_to_file("res://startmenu.tscn")
+	else:
+		get_tree().reload_current_scene()
 
 func use_banana_on_monkey(monkey):
 	if bananas_collected > 0:

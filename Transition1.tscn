@@ -46,6 +46,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(14, 8.24324)
 color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 offset_left = 132.0
@@ -53,7 +54,7 @@ offset_top = 109.0
 offset_right = 333.0
 offset_bottom = 168.0
 text = "				Stage 1
-		Welcome to IKN"
+	Selamat Datang di IKN"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
