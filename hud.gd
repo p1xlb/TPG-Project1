@@ -5,7 +5,7 @@ extends CanvasLayer
 func _ready():
 	add_to_group("hud")
 	update_health(State.player_health)
-	update_banana_count(0)
+	update_banana_count(State.bananas_collected)
 
 func update_health(value):
 	if value == 3:

@@ -1,0 +1,18 @@
+~ start
+if State.worker_hungry == false:
+	Pekerja 2: Mantap eee
+	=> END
+
+if State.worker_hungry == true:
+	Pekerja 1: Ko lapar kah
+	Pekerja 2: Lapar eee
+	Pekerja 3: Saya juga
+	Pekerja 4: Tapi belum waktunya istirahat nih...
+	Pekerja 1: Ada yang buat ganjal ga?
+	if State.bananas_collected >= 4:
+		- Berikan 4 pisang
+			Pekerja 1: Wah terima kasih banyak mas!
+			set State.bananas_collected -= 4
+			set State.worker_hungry = false
+		- ...
+=> END

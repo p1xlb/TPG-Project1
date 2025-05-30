@@ -90,7 +90,6 @@ func _on_actionables_body_entered(body: Node2D) -> void:
 			if $Carrot:
 				$Carrot.visible = true
 				$Carrot.get_node("CollisionShape2D").set_deferred("disabled", false)
-
 		else:
 			pass
 	else:

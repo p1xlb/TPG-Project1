@@ -1,6 +1,7 @@
 extends Node
 
 var player_health: int = 3
+var bananas_collected: int = 0
 
 var van_gone: bool = false
 
@@ -16,5 +17,7 @@ var quest1: bool = false
 #var potion: bool = false
 
 var quiz1: bool = false
+
+var worker_hungry = true
 
 var sequence: Array = []

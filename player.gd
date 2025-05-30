@@ -5,7 +5,6 @@ extends CharacterBody2D
 #var health = State.player_health
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-var bananas_collected = 0
 var meat_collected = false
 var carrot_collected = false
 var apple_collected = false
@@ -71,11 +70,11 @@ func _physics_process(delta):
 	move_and_slide()
 
 func collect_banana():
-	bananas_collected += 1
+	State.bananas_collected += 1
 	#$CollectSound.play()
 	# Notify the HUD to update
-	get_tree().call_group("hud", "update_banana_count", bananas_collected)
-	print("Banana collected! Total: ", bananas_collected)  # Debug print
+	get_tree().call_group("hud", "update_banana_count", State.bananas_collected)
+	print("Banana collected! Total: ", State.bananas_collected)  # Debug print
 
 func take_damage():
 	State.player_health -= 1
@@ -103,14 +102,14 @@ func die():
 	else:
 		get_tree().reload_current_scene()
 
-func use_banana_on_monkey(monkey):
-	if bananas_collected > 0:
-		bananas_collected -= 1
-		# Notify the HUD to update
-		get_tree().call_group("hud", "update_banana_count", bananas_collected)
-		monkey.pacify()
-		return true
-	return false
+#func use_banana_on_monkey(monkey):
+	#if bananas_collected > 0:
+		#bananas_collected -= 1
+		## Notify the HUD to update
+		#get_tree().call_group("hud", "update_banana_count", bananas_collected)
+		#monkey.pacify()
+		#return true
+	#return false
 
 func _on_attack_area_body_entered(body):
 	if body.is_in_group("enemies") and body.has_method("take_damage"):
