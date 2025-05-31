@@ -1,11 +1,17 @@
 ~ start
-Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
-Nathan: Here are some choices.
-- First one
-	Nathan: You picked the first one.
-- Second one
-	Nathan: You picked the second one.
-- Start again => start
-- End the conversation => END
-Nathan: For more information see the online documentation.
+if State.quiz2 == true:
+	Rini: Terima kasih lagi sudah mau main sama Rini!
+	
+if State.quiz2 == false:
+	Anda: Anda lagi
+	Rini: Ya! Rini lagi.
+	Rini: Rini punya pertanyaan lagi nih.
+	Rini: Teknologi apa yang digunakan dalam konstruksi bangunan di IKN?
+	- Ekskavator Konvensional
+		Rini: Hmm, kurang benar...
+	- Building Information Modelling
+		Rini: Ya benar sekali!
+		set State.quiz2 = true
+	- Panel Surya
+		Rini: Hmm, kurang benar...
 => END

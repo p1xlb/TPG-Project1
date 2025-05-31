@@ -13,6 +13,7 @@ if State.worker_hungry == true:
 		- Berikan 4 pisang
 			Pekerja 1: Wah terima kasih banyak mas!
 			set State.bananas_collected -= 4
+			do State.update_banana()
 			set State.worker_hungry = false
 		- ...
 => END

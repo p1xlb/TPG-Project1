@@ -1188,13 +1188,13 @@ texture = ExtResource("13_f1ktl")
 position = Vector2(412, 278)
 
 [node name="Banana2" parent="." instance=ExtResource("13_4b8vk")]
-position = Vector2(431, 278)
+position = Vector2(617, 274)
 
 [node name="Banana3" parent="." instance=ExtResource("13_4b8vk")]
-position = Vector2(1114, 278)
+position = Vector2(1380, 231)
 
 [node name="Banana4" parent="." instance=ExtResource("13_4b8vk")]
-position = Vector2(1246, 273)
+position = Vector2(1287, 237)
 
 [node name="Pits" type="Area2D" parent="."]
 position = Vector2(893, 360)
@@ -1215,6 +1215,7 @@ shape = SubResource("RectangleShape2D_ur4gu")
 [node name="Door End" type="Area2D" parent="."]
 position = Vector2(3550, 275)
 script = ExtResource("17_5ty5u")
+next_stage = "res://Stage2.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door End"]
 position = Vector2(-35, -1.5)

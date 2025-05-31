@@ -1,0 +1,21 @@
+~ start
+if State.tablet_found == false:
+	if State.npc2_5_interact == false:
+		Yanto: Di sini semua kerja berdasarkan tahapan dan target mingguan.
+		Yanto: Kita terus diawasi lewat dashboard digital. Jadi semua bisa dilacak, dan waktu bisa dihemat.
+		Anda: Wow, canggih sekali!
+		Yanto: Ngomong-ngomong, tablet saya yang buat akses dashboard digital hilang,
+		Yanto: Sepertinya ada di dekat bangunan kaca sebelumnya yang sedang dikerjakan.
+		do State.spawn_tablet()
+		set State.npc2_5_interact = true
+		=> END
+
+if State.npc2_5_interact == true:
+	Yanto: Kamu menemukannya?
+	Yanto: Wah terima kasih banyak ya! Hampir saja pekerjaan hari ini tertunda...
+	set State.npc2_5_interact = true
+	=> END
+	
+else:
+	Yanto: Tablet saya sepertinya ada di dekat bangunan kaca sebelumnya yang sedang dikerjakan.
+=> END
