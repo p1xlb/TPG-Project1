@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=3 uid="uid://bfikrxek7ilcn"]
+[gd_scene load_steps=92 format=3 uid="uid://bfikrxek7ilcn"]
 
 [ext_resource type="Script" uid="uid://c060pio1q7d67" path="res://stage_1.gd" id="1_1t8ka"]
 [ext_resource type="Texture2D" uid="uid://cd481tahcy3b" path="res://Jungle Monkey Platformer/1-Sprites/Platforms and Decor/Platforms.png" id="1_3kocv"]
@@ -37,7 +37,6 @@
 [ext_resource type="Resource" uid="uid://dbv1i7410tgkf" path="res://dialogs/npc4.dialogue" id="37_5ty5u"]
 [ext_resource type="Resource" uid="uid://3etefup7pa1l" path="res://dialogs/npc_q1.dialogue" id="37_7rl1s"]
 [ext_resource type="Texture2D" uid="uid://dn37l7c1b5kw2" path="res://VanBounceRoll-Sheet.png" id="38_5ty5u"]
-[ext_resource type="Script" uid="uid://bu17nhkxc0rg1" path="res://bus.gd" id="38_7rl1s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1l0jo"]
 texture = ExtResource("1_3kocv")
@@ -1477,7 +1476,6 @@ shape = SubResource("CircleShape2D_tty01")
 [node name="Bus" type="Area2D" parent="."]
 position = Vector2(50, 264)
 scale = Vector2(-1, 1)
-script = ExtResource("38_7rl1s")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bus"]
 sprite_frames = SubResource("SpriteFrames_t8jbu")
