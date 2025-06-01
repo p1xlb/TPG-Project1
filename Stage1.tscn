@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=3 uid="uid://bfikrxek7ilcn"]
+[gd_scene load_steps=90 format=3 uid="uid://bfikrxek7ilcn"]
 
 [ext_resource type="Script" uid="uid://c060pio1q7d67" path="res://stage_1.gd" id="1_1t8ka"]
 [ext_resource type="Texture2D" uid="uid://cd481tahcy3b" path="res://Jungle Monkey Platformer/1-Sprites/Platforms and Decor/Platforms.png" id="1_3kocv"]
@@ -771,67 +771,6 @@ _data = {
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qa7b8"]
 
-[sub_resource type="Animation" id="Animation_t4vir"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-2, 10.885)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../Apple/Sprite2D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-2, 5.315)]
-}
-
-[sub_resource type="Animation" id="Animation_o2ind"]
-resource_name = "float"
-length = 2.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.966667, 2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(-2, 0), Vector2(-2, 8.445), Vector2(-2, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_dsied"]
-resource_name = "float_a"
-length = 2.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Apple/Sprite2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(-2, 10.885), Vector2(-2, 5.315), Vector2(-2, 10.885)]
-}
-
 [sub_resource type="Animation" id="Animation_4sd3f"]
 resource_name = "float_c"
 length = 2.0
@@ -866,11 +805,26 @@ tracks/0/keys = {
 "values": [Vector2(-2, 10.885), Vector2(-2, 13.505), Vector2(-2, 10.885)]
 }
 
+[sub_resource type="Animation" id="Animation_o2ind"]
+resource_name = "float"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.966667, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-2, 0), Vector2(-2, 8.445), Vector2(-2, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_76fgo"]
 _data = {
-&"RESET": SubResource("Animation_t4vir"),
 &"float": SubResource("Animation_o2ind"),
-&"float_a": SubResource("Animation_dsied"),
 &"float_c": SubResource("Animation_4sd3f"),
 &"float_p": SubResource("Animation_f1ktl")
 }
@@ -1214,7 +1168,7 @@ shape = SubResource("RectangleShape2D_ur4gu")
 [node name="Door End" type="Area2D" parent="."]
 position = Vector2(3550, 275)
 script = ExtResource("17_5ty5u")
-next_stage = "res://Stage2.tscn"
+next_stage = "res://Transition2.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door End"]
 position = Vector2(-35, -1.5)
@@ -1244,7 +1198,7 @@ position = Vector2(0, -3.6561)
 shape = SubResource("CapsuleShape2D_qa7b8")
 
 [node name="Sprite2D" type="Sprite2D" parent="Meat"]
-position = Vector2(-2, 10.885)
+position = Vector2(-2, 5.80279)
 scale = Vector2(0.605, 0.605)
 texture = ExtResource("26_t4vir")
 
@@ -1265,7 +1219,7 @@ position = Vector2(-1.20471, 7.22891)
 shape = SubResource("CapsuleShape2D_o2ind")
 
 [node name="Sprite2D" type="Sprite2D" parent="Carrot"]
-position = Vector2(-2, 10.885)
+position = Vector2(-2, 0)
 scale = Vector2(0.605, 0.605)
 texture = ExtResource("26_t4vir")
 
@@ -1287,7 +1241,7 @@ scale = Vector2(0.605, 0.605)
 shape = SubResource("CircleShape2D_4sd3f")
 
 [node name="Sprite2D" type="Sprite2D" parent="Apple"]
-position = Vector2(-2, 5.315)
+position = Vector2(-2, 10.885)
 scale = Vector2(0.605, 0.605)
 texture = ExtResource("26_t4vir")
 

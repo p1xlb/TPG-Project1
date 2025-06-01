@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bw8nvcbxbnlxl"
+path="res://.godot/imported/npc3_1(Q).dialogue-97a40331a1536de8c6517f627a1bfe88.tres"
+
+[deps]
+
+source_file="res://dialogs/npc3_1(Q).dialogue"
+dest_files=["res://.godot/imported/npc3_1(Q).dialogue-97a40331a1536de8c6517f627a1bfe88.tres"]
+
+[params]
+
+defaults=true

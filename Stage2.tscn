@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://8685bcmupcdi"]
+[gd_scene load_steps=63 format=3 uid="uid://8685bcmupcdi"]
 
 [ext_resource type="Script" uid="uid://buxun1t0uo731" path="res://stage_2.gd" id="1_md1qg"]
 [ext_resource type="Texture2D" uid="uid://cd481tahcy3b" path="res://Jungle Monkey Platformer/1-Sprites/Platforms and Decor/Platforms.png" id="2_0oi4i"]
@@ -19,6 +19,7 @@
 [ext_resource type="Script" uid="uid://m148wfme7eap" path="res://pits.gd" id="16_8voou"]
 [ext_resource type="PackedScene" uid="uid://c2ha6mh82t7cn" path="res://helper/actionables.tscn" id="19_47jav"]
 [ext_resource type="Resource" uid="uid://rxitg0mt8a2" path="res://dialogs/npc2_5(Q).dialogue" id="21_gn33j"]
+[ext_resource type="Script" uid="uid://dtlhk47ems0x3" path="res://npc_2_4.gd" id="21_ueny0"]
 [ext_resource type="Resource" uid="uid://c4qhq47t1b4fu" path="res://dialogs/npc2_1.dialogue" id="23_7abla"]
 [ext_resource type="Script" uid="uid://bmdmor3rhpqcc" path="res://npc_q2.gd" id="23_71w2t"]
 [ext_resource type="Resource" uid="uid://bv45fmlhwykcx" path="res://dialogs/npc2_4.dialogue" id="23_cnk5m"]
@@ -724,6 +725,9 @@ size = Vector2(290, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_71w2t"]
 size = Vector2(39, 32)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ueny0"]
+size = Vector2(23, 72)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_425e0"]
 size = Vector2(181, 32)
 
@@ -734,6 +738,21 @@ size = Vector2(20, 61)
 radius = 15.7175
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i15e4"]
+
+[sub_resource type="Animation" id="Animation_0bc0o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-2, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_apcu0"]
 resource_name = "floater"
@@ -750,21 +769,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(-2, 0), Vector2(-2, 6.97), Vector2(-2, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_0bc0o"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-2, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7sdb2"]
@@ -844,6 +848,21 @@ animations = [{
 "speed": 7.0
 }]
 
+[sub_resource type="Animation" id="Animation_wf2js"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_7sdb2"]
 resource_name = "van_drive_2"
 length = 4.0
@@ -858,21 +877,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(203, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_wf2js"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_f4j1c"]
@@ -1038,14 +1042,19 @@ dialog_resource = ExtResource("23_cnk5m")
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_71w2t")
 
-[node name="NPC5" type="Area2D" parent="."]
+[node name="NPC5" type="CharacterBody2D" parent="."]
 position = Vector2(2387, 272)
+script = ExtResource("21_ueny0")
 
 [node name="ColorRect" type="ColorRect" parent="NPC5"]
 offset_left = -12.0
 offset_top = -16.0
 offset_right = 11.0
 offset_bottom = 16.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC5"]
+position = Vector2(-1.5, -20)
+shape = SubResource("RectangleShape2D_ueny0")
 
 [node name="Actionables" parent="NPC5" instance=ExtResource("19_47jav")]
 dialog_resource = ExtResource("21_gn33j")
@@ -1154,7 +1163,7 @@ autoplay = "floater"
 [node name="Bus" type="Area2D" parent="."]
 position = Vector2(3454, 264)
 script = ExtResource("30_ueny0")
-next_stage = "res://startmenu.tscn"
+next_stage = "res://Transition3.tscn"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bus"]
 sprite_frames = SubResource("SpriteFrames_apcu0")
@@ -1173,6 +1182,7 @@ shape = SubResource("RectangleShape2D_qlmw7")
 
 [connection signal="body_entered" from="Pits" to="Pits" method="_on_body_entered"]
 [connection signal="body_entered" from="Pits2" to="Pits2" method="_on_body_entered"]
+[connection signal="body_entered" from="NPC5/Actionables" to="NPC5" method="_on_actionables_body_entered"]
 [connection signal="body_entered" from="NPC_Q2/Actionables" to="NPC_Q2" method="_on_actionables_body_entered"]
 [connection signal="body_entered" from="Tablet" to="Tablet" method="_on_body_entered"]
 [connection signal="body_entered" from="Bus" to="Bus" method="_on_body_entered"]

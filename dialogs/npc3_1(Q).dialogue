@@ -1,0 +1,22 @@
+~ start
+if State.tablet_found == false:
+	if State.npc3_1_interact == false:
+		Sari: Lihat ini, ini Batik Kalimantan dengan motif pohon kehidupan.
+		Anda: Cantik sekali!
+		Sari: Cantik bukan? Kami bersyukur, pemerintah memberi ruang budaya di tengah kota pintar ini.
+		Sari: Hmm, tapi canting saya mana ya...
+		Sari: Sepertinya tadi dibawa anak kecil waktu saya lagi peragakan
+		Anda: ...
+		do State.spawn_canting()
+		set State.npc3_1_interact = true
+		=> END
+
+if State.npc3_1_interact == true:
+	Sari: Wah nakal sekali ya sampai di bawa ke atas pohon.
+	Sari: Terima kasih banyak ya!
+	set State.npc3_1_interact = true
+	=> END
+	
+else:
+	Sari: Dimana ya canting saya...
+=> END
