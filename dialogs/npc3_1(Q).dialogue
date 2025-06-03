@@ -1,5 +1,5 @@
 ~ start
-if State.tablet_found == false:
+if State.canting_found == false:
 	if State.npc3_1_interact == false:
 		Sari: Lihat ini, ini Batik Kalimantan dengan motif pohon kehidupan.
 		Anda: Cantik sekali!

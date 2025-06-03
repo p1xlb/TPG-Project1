@@ -1,4 +1,19 @@
 ~ start
-Budi: Hati-hati jalannya, Mas! ini zona konstruksi aktif, banyak alat berat dimana-mana.
-Budi: Tapi keren ya, semuanya serba modern. Bahkan beberapa alat berat seperti ekskavator ini dikendalikan secara otomatis!
+if State.dialog2_2 == false:
+	Budi: Hati-hati jalannya, Mas! Ini zona konstruksi aktif, banyak alat berat di mana-mana.
+	Budi: Tapi keren ya, semuanya serba modern. Bahkan beberapa alat berat seperti ekskavator ini dikendalikan secara otomatis!
+	(Budi menunjuk ke ekskavator yang bergerak tanpa operator di dalam kabin)
+	Budi: Sekarang banyak alat pakai sistem kendali jarak jauh dan sensor AI.
+	Budi: Menurut kamu, teknologi kayak gini paling bermanfaat di bagian mana, sih?
+	
+	- Biar pekerjaan lebih cepat dan efisien.
+		Budi: Betul! Produktivitas meningkat pesat, dan proyek bisa selesai tepat waktu.
+	- Untuk mengurangi risiko kecelakaan kerja.
+		Budi: Nah, ini yang penting! Teknologi bantu lindungi nyawa juga, bukan cuma kejar target.
+	- Supaya kelihatan canggih aja.
+		Budi: Haha, ya kelihatannya sih begitu. Tapi manfaatnya nyata, lho, bukan cuma gaya-gayaan.
+	set State.dialog2_2 = true
+
+Budi: Teknologi-teknologi yang canggih ini diharapkan mampu membantu mempercepat pembangunan di IKN.
+	
 => END

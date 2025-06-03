@@ -1,4 +1,16 @@
 ~ start
-Lala: Pembangunan IKN dipercepat karena target pemerintah: tahap awal harus selesai dalam 5 tahun. Mulai dari istana negara, kantor kementerian, sampai jalan tol dan bandara.
-Lala: Makanya semua kerja siang malam.
+if State.dialog1_1 == false:
+	Lala: Pembangunan IKN dipercepat karena target pemerintah cukup ambisius.
+	Lala: Tahap awal harus selesai dalam 5 tahun—termasuk istana negara, kantor kementerian, jalan tol, dan bandara.
+	Lala: Makanya, semua orang kerja siang malam.
+	Lala: Kamu sendiri gimana? Menurutmu, kalau target sebesar itu, apa yang paling penting buat dijaga?
+	- Kesehatan dan keselamatan para pekerja.
+		Lala: Wah, aku setuju banget. Percuma cepat kalau banyak yang tumbang di jalan.
+	- Teknologi dan koordinasi tim.
+		Lala: Iya! Makanya kami pakai sistem digital seperti BIM biar semua terpantau real-time.
+	- Lingkungan dan alam sekitar.
+		Lala: Nah, itu juga penting. Ada zona hijau yang tetap dilindungi meski proyek dikerjakan.
+	set State.dialog1_1 = true
+	
+Lala: Semoga dengan dipercepatnya pembangunan di IKN akan membuat negara kita semakin maju dan sejahtera.	
 => END

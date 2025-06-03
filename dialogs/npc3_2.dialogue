@@ -1,7 +1,18 @@
 ~ start
-Rafi: Halo saya Rafi, saya koordinator transportasi di sini.
-Rafi: Bus yang kamu naiki di IKN ini tidak menggunakan bensin lho.
-Anda: Oh ya?
-Rafi: Iya, salah satu regulasi di IKN kedepannya kendaraan pribadi maupun umum sudah harus menggunakan sumber energi terbarukan.
-Rafi: Salah satunya Bus Listrik yang kamu naiki!
+if State.dialog3_2 == false:
+	Rafi: Halo, saya Rafi. Saya koordinator transportasi di sini.
+	Rafi: Bus yang kamu naiki di IKN ini tidak menggunakan bensin, lho.
+	Anda: Oh ya?
+	Rafi: Iya, salah satu regulasi di IKN ke depannya, kendaraan pribadi maupun umum wajib menggunakan sumber energi terbarukan.
+	Rafi: Salah satunya ya Bus Listrik ini. Nggak berisik, nol emisi, dan hemat biaya operasional.
+	Rafi: Kalau kamu punya kendaraan nanti, kamu lebih pilih yang pakai listrik, hidrogen, atau tetap bensin?
+	- Listrik, dong! Lebih ramah lingkungan.
+		Rafi: Nah, itu pilihan cerdas! Infrastruktur pengisian juga sudah mulai dibangun di mana-mana.
+	- Hidrogen sepertinya menarik.
+		Rafi: Wah, keren! Teknologi hidrogen juga sedang dikaji untuk kendaraan berat dan jarak jauh.
+	- Kayaknya tetap bensin, deh.
+		Rafi: Hmm... meski masih diperbolehkan dalam masa transisi, nanti akan ada pembatasan akses untuk kendaraan berbahan bakar fosil.
+	set State.dialog3_2 = true
+	
+Rafi: Dengan membuat regulasi perihal kendaraan dengan sumber energi terbarukan, diharapkan IKN menjadi kota dengan polusi yang sangat rendah.
 => END

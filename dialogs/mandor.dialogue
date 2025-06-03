@@ -1,5 +1,17 @@
 ~ start
-Mandor: Hari ini kita akan kerjakan flooring
-Mandor: Jangan lupa utamakan keselamatan
-Pekerja: Laksanakan!
+if State.dialog1_2 == false:
+	Mandor: Hari ini kita akan kerjakan flooring
+	Mandor: Jangan lupa utamakan keselamatan
+	Pekerja: Laksanakan!
+	set State.dialog1_2 = true
+	
+Pekerja 1: Oh halo! Hari ini kami akan kerjakan bangunan Rumah Sakit ini!
+- Besar sekali ya!
+	Pekerja 1: iya, Rumah Sakit ini direncanakan akan menjadi rumah sakit kelas internasional,
+	Pekerja 1: yang tadinya ada keperluan untuk berobat ke luar negeri, sekarang bisa ke IKN!
+- Sudah berapa lama bangunan ini dikerjakan?
+	Pekerja1 : Rumah Sakit ini sudah kami kerjakan selama 3 minggu dengan target minggu depan genap 1 bulan sudah selesai!.
+	Anda: Wah cepat sekali ya!
+- ...
+	Anda: ...
 => END
