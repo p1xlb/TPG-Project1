@@ -26,6 +26,8 @@ var dialog1_2: bool = false
 #var dialog2_1: bool = false
 var dialog2_2: bool = false
 var dialog3_2: bool = false
+var dialog3_4: bool = false
+var dialog3_5: bool = false
 
 var papers: int = 0
 var tablet_found: bool = false

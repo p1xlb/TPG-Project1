@@ -1,0 +1,22 @@
+~ start
+if State.dialog3_5 == false:
+	Ilham: Lihat tiang lampu itu? Dia bisa deteksi cuaca, polusi udara, bahkan arah angin secara real-time.
+	Ilham: Data seperti ini dikumpulkan dan dikirim ke pusat kota, lalu dianalisis buat bantu perencanaan lingkungan yang lebih akurat.
+	Ilham: Kota ini nggak cuma dibangun—tapi diajarin juga buat "berpikir".
+	Ilham: Kalau kamu bisa pasang sensor tambahan di seluruh kota, kamu bakal pasang buat apa?
+	- Pantau suhu dan kelembaban untuk pertanian kota
+		Ilham: Wah, itu keren! Urban farming jadi makin presisi
+	- Pantau kebisingan lalu lintas
+		Ilham: Harusnya lalu lintas di IKN nantinya tidak terlalu ramai ya,
+		Ilham: Berkat transportasi umum yang sudah direncanakan matamg,
+		Ilham: Tapi nanti kita lihat saja!
+	- Sensor deteksi banjir atau genangan
+		Ilham: Ide bagus! 
+		Ilham: Terutama waktu hujan deras datang tiba-tiba. Bisa langsung kasih peringatan dini
+	- Kayaknya… sensor pengingat hujan biar nggak lupa bawa jas hujan
+		Ilham: Haha, yang simpel tapi bermanfaat. 
+		Ilham: Kadang teknologi terbaik ya yang bikin hidup lebih mudah.
+	set State.dialog3_5 = true:
+		
+Ilham: Dengan terwujudnya konsep Smart City di IKN, diharapkan kehidupan penduduk di IKN menjadi lebih mudah dan praktis.
+=> END

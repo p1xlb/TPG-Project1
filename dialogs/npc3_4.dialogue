@@ -1,0 +1,21 @@
+~ start
+if State.dialog3_4 == false:
+	Anda: Eh… Maaf, Bapak… Pak Jokowi?!
+	Anda: Sedang apa pak di IKN?
+	Joko Widodo: Iya, benar. Saya memang sering datang ke sini, melihat langsung bagaimana mimpi ini tumbuh.
+	Joko Widodo: Kota ini bukan hanya proyek… tapi harapan yang jadi nyata.
+	Anda: Oh begitu, saya sendiri datang kesini untuk coba memahami kenapa pembangunan IKN begitu dipercepat.
+	Joko Widodo: Karena waktu tak bisa ditunggu. Kita ingin generasi muda bisa menikmati hasilnya, bukan hanya mendengarnya dari rencana.
+	Joko Widodo: Kita mengerjakan yang kita rencanakan, bukan sekedar membicarakannya saja.
+	Anda: Oh seperti itu pak...
+	Joko Widodo: Kalau kamu ada di sini hari ini, mungkin kamu juga bagian dari masa depan kota ini.
+	- Saya ingin ikut berkontribusi.
+		Joko Widodo: Bukankah kita semua ingin?
+	- Saya masih mencari tahu peran saya.
+		Joko Widodo: Dengan pendidikan, kita semua berperan dalam kemajuan negeri ini.
+	- Saya hanya penasaran… tapi jadi tertarik sekarang.
+		Joko Widodo: Baguslah kalau begitu...
+	set State.dialog3_4 = true
+
+Joko Widodo: Saya harap, dengan inisiatif yang saya mulai ini, saya bisa berkontribusi besar terhadap majunya Indonesia.
+=> END
