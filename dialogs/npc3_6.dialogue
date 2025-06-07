@@ -1,0 +1,26 @@
+~ start
+if State.dialog3_6 == false:
+	Anda: Bapak Presiden! Sebuah kehormatan bagi saya dapat bertemu bapak di kota yang baru ini!
+	Prabowo Subianto: Selamat Datang di IKN! Kamu datang jauh-jauh ke IKN, ya?
+	Prabowo Subianto: Banyak yang penasaran, tapi hanya sedikit yang benar-benar ingin memahami.
+	Anda: Benar pak! Saya ingin tahu sekali tentang IKN, salah satunya alasan pembangunannya yang dipercepat...
+	Prabowo Subianto: Oh begitu...
+	set State.dialog3_6 = true
+	
+- Apa peran Bapak dalam kelanjutan pembangunan IKN?
+	Prabowo Subianto: Saya melanjutkan visi dan fondasi yang sudah dibangun. Tapi tugas saya bukan sekadar meneruskan…
+	Prabowo Subianto: Tugas saya memastikan IKN benar-benar menjadi kota kebanggaan bangsa, bukan hanya proyek infrastruktur.
+	Prabowo Subianto: Itu berarti, pendidikan, keamanan, pangan, energi—semuanya harus terintegrasi.
+- Apa tantangan terbesar membangun kota baru seperti ini?
+	Prabowo Subianto: Tantangannya banyak: koordinasi lintas kementerian, menjaga keseimbangan ekosistem, sampai kecepatan pembangunan.
+	Prabowo Subianto: Tapi bagi saya, tantangan terbesar justru menjaga semangat.
+	Prabowo Subianto: Pembangunan fisik bisa cepat. Tapi membangun kepercayaan masyarakat, itu butuh ketulusan dan konsistensi.
+- Menurut Bapak, seperti apa IKN dalam 20 tahun ke depan
+	Prabowo Subianto: Tantangannya banyak: koordinasi lintas kementerian, menjaga keseimbangan ekosistem, sampai kecepatan pembangunan.
+	Prabowo Subianto: Tapi bagi saya, tantangan terbesar justru menjaga semangat.
+	Prabowo Subianto: Pembangunan fisik bisa cepat. Tapi membangun kepercayaan masyarakat, itu butuh ketulusan dan konsistensi.
+
+Prabowo Subianto: Saya senang anak muda seperti kamu mau turun langsung melihat dan bertanya.
+Prabowo Subianto: Teruslah belajar, karena masa depan kota ini ada di tangan kalian.
+Prabowo Subianto: HIDUP INDONESIA!
+=> END

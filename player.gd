@@ -71,10 +71,12 @@ func _physics_process(delta):
 
 func collect_banana():
 	State.bananas_collected += 1
+	State.stage_banana += 1
 	#$CollectSound.play()
 	# Notify the HUD to update
 	get_tree().call_group("hud", "update_banana_count", State.bananas_collected)
 	print("Banana collected! Total: ", State.bananas_collected)  # Debug print
+	print("Stage Banana collected! Total: ", State.stage_banana)  # Debug print
 
 func take_damage():
 	State.player_health -= 1
@@ -98,8 +100,11 @@ func die():
 	# Reset level after a delay
 	await get_tree().create_timer(2.0).timeout
 	if State.player_health == 0:
+		State.die_reset()
 		get_tree().change_scene_to_file("res://startmenu.tscn")
 	else:
+		State.reset_banana()
+		State.reset_stage_banana()
 		get_tree().reload_current_scene()
 
 #func use_banana_on_monkey(monkey):

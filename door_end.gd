@@ -7,6 +7,7 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
+		State.reset_stage_banana()
 		body.set_physics_process(false)
 		body.visible = false
 		await get_tree().create_timer(1.0).timeout
